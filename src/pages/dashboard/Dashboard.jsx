@@ -1,4 +1,6 @@
-import React, {useEffect} from 'react'
+import React, {useEffect, useState} from 'react'
+
+import axios from 'axios'
 
 import { Link } from 'react-router-dom'
 
@@ -15,6 +17,8 @@ import Badge from '../../components/badge/Badge'
 import statusCards from '../../assets/JsonData/status-card-data.json'
 
 import "./Dashboar.css" 
+
+import "../../components/tableDash/table.css"
 
 const chartOptions = {
     series: [{
@@ -184,11 +188,27 @@ const renderOrderBody = (item, index) => (
 
 const Dashboard = () => {
 
+    const [data, setData] = useState([]);
+
+  const getDataCommandes = async () => {
+    try {
+      const apiUrl = "http://192.168.252.74:8082/commande/viewCom.php";
+      const response = await axios.get(apiUrl);
+      setData(response.data);
+    } catch (e) {
+      console.log(e);
+    }
+  };
+
+  useEffect(() => {
+    getDataCommandes();
+  }, []);
+
     const themeReducer = useSelector(state => state.ThemeReducer.mode)
 
     return (
         <div>
-            <h2 className="page-header">Dashboard</h2>
+            <h2 className="page-header">Tableau de bord</h2>
             <div className="row">
                 <div className="col-6">
            <Link to="/commandes/index">
@@ -211,7 +231,7 @@ const Dashboard = () => {
                      
                 </div>
                 <div className="col-6">
-                    <div className="card full-height">
+                    <div className="card full-height" style={{background: "#f4f4e7"}}>
                         {/* chart */}
                         <Chart
                             options={themeReducer === 'theme-mode-dark' ? {
@@ -234,12 +254,25 @@ const Dashboard = () => {
                         </div>
                         <div className="card__body">
                            <div className='table-container'>
-                           <TableDash
-                                headData={topCustomers.head}
-                                renderHead={(item, index) => renderCusomerHead(item, index)}
-                                bodyData={topCustomers.body}
-                                renderBody={(item, index) => renderCusomerBody(item, index)}
-                            />
+                           <div className="table-wrapper">
+                    <table>
+                      <thead>
+                        <tr>
+                          <th>Nom du produit</th>
+                          <th>Quantité commandée</th>
+                          <th>Prix de la commande</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {data.map((item) => (
+                          <tr key={item.Id}>
+                            <td>{item.Nom_com}</td>
+                            <td>{item.Quan_com}</td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>   
                            </div>
                         </div>
                         <div className="card__footer">
