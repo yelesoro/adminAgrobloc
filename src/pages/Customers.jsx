@@ -1,36 +1,37 @@
-import React from 'react'
+import React from "react";
 
-import Table from '../components/tableDash/Table'
+import Table from "../components/tableDash/Table";
 
-import customerList from '../assets/JsonData/customers-list.json'
-
-import { useState,useEffect } from 'react'
-import axios from "axios"
-
+import customerList from "../assets/JsonData/customers-list.json";
+import { useState, useEffect } from "react";
+import axios from "axios";
+import "../components/tableDash/table.css";
 const customerTableHead = [
-    '',
-    'Nom',
-    'email',
-    'phone',
+  "",
+  "Nom",
+  "email",
+  "phone",
+  "Adresse",
+  "Produits Vendus",
+  "Dates de rencontre",
+];
 
-   
-]
-
-const renderHead = (item, index) => <th key={index}>{item}</th>
+const renderHead = (item, index) => <th key={index}>{item}</th>;
 
 const renderBody = (item, index) => (
-    <tr key={item}>
-        <td>{item.Id_planteur}</td>
-        <td>{item.Num_pieceP}</td>
-        <td>{item.Nom_planteur}</td>
-        <td>{item.Pren_planteur}</td>
-
-    </tr>
-)
+  <tr key={index}>
+    <td>{item.id}</td>
+    <td>{item.Id_planteur}</td>
+    <td>{item.Num_pieceP}</td>
+    <td>{item.Nom_planteur}</td>
+    <td>{item.Pren_planteur}</td>
+    <td>{item.total_spend}</td>
+    <td>{item.location}</td>
+  </tr>
+);
 
 const Customers = () => {
-
-    const [data, setData] = useState([]);
+  const [data, setData] = useState([]);
 
   const getData = async () => {
     try {
@@ -45,30 +46,42 @@ const Customers = () => {
   useEffect(() => {
     getData();
   }, []);
+  return (
+    <div>
+      <h2 className="page-header">Liste des vendeurs rencontrés</h2>
+      <div className="row">
+        <div className="col-12">
+          <div className="card">
+            <div className="card__body">
+              <div>
 
-
-    return (
-        <div>
-            <h2 className="page-header">
-                Liste des vendeurs rencontrés
-            </h2>
-            <div className="row">
-                <div className="col-12">
-                    <div className="card">
-                        <div className="card__body">
-                            <Table
-                                limit='9'
-                                headData={customerTableHead}
-                                renderHead={(item, index) => renderHead(item, index)}
-                                bodyData={data}
-                                renderBody={(item, index) => renderBody(item, index)}
-                            />
-                        </div>
-                    </div>
-                </div>
+                  <div className="table-wrapper">
+                    <table>
+                      <thead>
+                        <tr>
+                          <th>ID</th>
+                          <th>Nom</th>
+                          <th>Description</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {data.map((item) => (
+                          <tr key={item.Id_planteur}>
+                            <td>{item.Num_pieceP}</td>
+                            <td>{item.nom}</td>
+                            <td>{item.description}</td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
+              </div>
             </div>
+          </div>
         </div>
-    )
-}
+      </div>
+    </div>
+  );
+};
 
-export default Customers
+export default Customers;
