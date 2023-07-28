@@ -2,6 +2,7 @@ import React from "react";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import "../components/tableDash/table.css";
+import {Link} from "react-router-dom"
 
 
 const Customers = () => {
@@ -44,7 +45,7 @@ const Customers = () => {
                             <td>{item.Num_pieceP}</td>
                             <td>{item.Nom_planteur}</td>
                             <td>{item.Pren_planteur}</td>
-                            <td><button className="btn">Voir plus</button></td>
+                            <td><Link to = {"/"}><button className="btn">Voir plus</button></Link></td>
                           </tr>
                         ))}
                       </tbody>
