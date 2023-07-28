@@ -1,0 +1,18 @@
+[
+    {
+        "icon": "bx bx-error",
+        "content": "Commande ... non validée"
+    },
+    {
+        "icon": "bx bx-package",
+        "content": "Envoi du produit... par le venteur ..."
+    },
+    {
+        "icon": "bx bx-cart",
+        "content": "Commande du vendeur ... validée"
+    },
+    {
+        "icon": "bx bx-cart",
+        "content": "Commande du vendeur ... validée"
+    }
+]

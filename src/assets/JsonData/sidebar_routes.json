@@ -1,0 +1,30 @@
+[
+    {
+        "display_name": "Tableau de bord",
+        "route": "/",
+        "icon": "bx bx-category-alt"
+    },
+    {
+        "display_name": "Vendeurs",
+        "route": "/customers",
+        "icon": "bx bx-user-pin"
+    },
+ 
+    {
+        "display_name": "Statut des commandes",
+        "route": "/orders",
+        "icon": "bx bx-cart"
+    },
+    {
+        "display_name": "Analyses",
+        "route": "/geographycard",
+        "icon": "bx bx-bar-chart-alt"
+    },
+ 
+    {
+        "display_name": "Comptes",
+        "route": "/logi",
+        "icon": "bx bx-credit-card-alt"
+    }
+
+]

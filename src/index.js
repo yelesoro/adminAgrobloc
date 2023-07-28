@@ -1,14 +1,34 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
+import ReactDOM from 'react-dom';
+import reportWebVitals from './reportWebVitals'
 import App from './App';
-import reportWebVitals from './reportWebVitals';
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
+import { createStore } from 'redux'
+
+import { Provider } from 'react-redux'
+
+import rootReducer from './redux/reducers'
+
+import './assets/boxicons-2.0.7/css/boxicons.min.css'
+import './assets/css/grid.css'
+import './assets/css/theme.css'
+import './assets/css/index.css'
+
+import Layout from './components/layout/Layout'
+
+const store = createStore(
+  rootReducer
+)
+
+document.title = 'AGROBLOC'
+
+ReactDOM.render(
+  <Provider store={store}>
+    <React.StrictMode>
+      <Layout/>
+    </React.StrictMode>
+  </Provider>,
+  document.getElementById('root')
 );
 
 // If you want to start measuring performance in your app, pass a function

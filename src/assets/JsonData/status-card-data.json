@@ -1,0 +1,22 @@
+[
+    {
+        "icon": "bx bx-user-pin",
+        "count": "4",
+        "title": "Vendeurs déja rencontrés"
+    },
+    {
+        "icon": "bx bx-message-square-check",
+        "count": "5",
+        "title": "Commandes validées"
+    },
+    {
+        "icon": "bx bx-dots-horizontal-rounded",
+        "count": "3",
+        "title": "Commandes en cours de validation"
+    },
+    {
+        "icon": "bx bx-check-square",
+        "count": "1",
+        "title": "Commandes livrées"
+    }
+]
