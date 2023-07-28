@@ -9,6 +9,8 @@ import Customers from '../pages/Customers'
 import Geographycard from '../pages/geography/geography'
 import Login from '../pages/login/login'
 import Products from '../pages/Products'
+import Statut from '../pages/Statut/Statut';
+import VendeurbyCommande from '../pages/Vendeursparcommande/VendeurbyCommande';
 
 
 const Routes = () => {
@@ -19,6 +21,8 @@ const Routes = () => {
             <Route path='/geographyCard' component = {Geographycard}/>
             <Route path='/products' component = {Products}/>
             <Route path='/commandes/:id' component = {Products}/>
+            <Route path='/statut' component ={Statut} ></Route>
+            <Route path='/vendeurparcommande' component = {VendeurbyCommande}></Route>
             
             
 

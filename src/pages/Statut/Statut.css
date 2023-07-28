@@ -1,0 +1,13 @@
+.btn1{
+    background-color: rgb(215, 220, 213);
+    padding: 1rem;
+    border-radius: 20px;
+    box-shadow: 2px 5px 5px rgb(149, 144, 144);
+    height: 55px;
+    width: 110px;
+    border: none;
+}
+
+.btn1:hover{
+    color: var(--main-color-green);
+}

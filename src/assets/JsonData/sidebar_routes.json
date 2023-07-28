@@ -12,7 +12,7 @@
  
     {
         "display_name": "Statut des commandes",
-        "route": "/orders",
+        "route": "/statut",
         "icon": "bx bx-cart"
     },
     {
