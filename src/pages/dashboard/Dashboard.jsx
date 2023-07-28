@@ -20,6 +20,27 @@ import "./Dashboar.css"
 
 import "../../components/tableDash/table.css"
 
+const StatutCommande = ({statut})=>{
+    let statusText;
+
+  if (statut == 1) {
+    statusText = 'Terminé';
+    return (
+        <div  className='statutT'>
+          <center><p >{statusText}</p></center>
+        </div>
+      );
+  } else {
+    statusText = 'En cours';
+    return (
+        <div  className='statutF'>
+          <center><p> {statusText}</p></center>
+        </div>
+      );
+  }
+    
+}
+
 const chartOptions = {
     series: [{
         name: 'Graphe des achats sur la plateforme',
@@ -267,7 +288,8 @@ const Dashboard = () => {
                         {data.map((item) => (
                           <tr key={item.Id}>
                             <td>{item.Nom_com}</td>
-                            <td>{item.Quan_com}</td>
+                            <td>{item.Quan_com} kg</td>
+                            <td>{item.Pri_com} frcs cfa</td>
                           </tr>
                         ))}
                       </tbody>
@@ -283,15 +305,32 @@ const Dashboard = () => {
                 <div className="col-8">
                     <div className="card">
                         <div className="card__header">
-                            <h3>Etat des commandes</h3>
+                            <h3>Etat des commandes récentes</h3>
                         </div>
                         <div className="card__body">
-                            <TableDash
-                                headData={latestOrders.header}
-                                renderHead={(item, index) => renderOrderHead(item, index)}
-                                bodyData={latestOrders.body}
-                                renderBody={(item, index) => renderOrderBody(item, index)}
-                            />
+                        <table>
+                      <thead>
+                        <tr>
+                          <th>Nom du produit</th>
+                          <th>Quantité commandée</th>
+                          <th>Prix de la commande</th>
+                          <th>Statut de la commande</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {data.map((item) => (
+                          <tr key={item.Id}>
+                          <td>{item.Nom_com}</td>
+                          <td>{item.Quan_com} kg</td>
+                          <td>{item.Pri_com} frcs cfa</td>
+                          <td><StatutCommande statut={item.Statut}/></td>
+                        
+                            
+
+                        </tr>
+                        ))}
+                      </tbody>
+                    </table>
                         </div>
                         <div className="card__footer">
                             <Link to='/'>voir plus</Link>
