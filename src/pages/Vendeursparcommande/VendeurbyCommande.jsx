@@ -1,195 +1,171 @@
 // @flow strict
 import Header from "./header/Header.jsx";
-import './vendeurparcommande.css'
-import {AiTwotoneStar, AiOutlineStar} from 'react-icons/ai'
-import {BiStar} from 'react-icons/bi'
-import {BsFacebook, BsWhatsapp} from 'react-icons/bs'
-import {BiPhoneCall} from 'react-icons/bi'
+import "./vendeurparcommande.css";
+import { AiTwotoneStar, AiOutlineStar } from "react-icons/ai";
+import { BiStar } from "react-icons/bi";
+import { BsFacebook, BsWhatsapp } from "react-icons/bs";
+import { BiPhoneCall } from "react-icons/bi";
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import axios from "axios";
+import {BsFillTelephoneFill, } from "react-icons/bs"
 
-import * as React from 'react';
+import * as React from "react";
 
 function VendeurbyCommande() {
+  const [data, setData] = useState([]);
 
-    const [data, setData] = useState([]);
+  useEffect(() => {
+    const apiUrl = "http://localhost:3000/api/get";
 
-    useEffect(() => {
-        const apiUrl = 'http://localhost:3000/api/get';
-    
-        // Appel à l'API avec Axios
-        axios.get(apiUrl)
-          .then(response => {
-            setData(response.data);
-          })
-          .catch(error => {
-            console.error('Erreur lors de la récupération des données :', error);
-          });
-      }, []);
-    return (
-        <div className="container">
-            <h1>DETAILS DE LA COMMANDE</h1>
-            <div className="bigdiv">
-
-                <div className="review" id="Review">
-                    <div className="review_box" >
-
-                    <div className="review_card">
-                    <div className="review_profile"> </div><br />
-
-                       
-                    <Link className="lien" to={'/priceDefinition'} >
-  <div className="review_text" >
-                            <h2 className="name">Nom Vendeur</h2>
-                            <div className="review_social">
-                                <BsFacebook className="i"/>
-                                <BsWhatsapp className="i"/>
-                                <BiPhoneCall className="i"/>
-    
-                            </div>
-                            <div><p>
-                                <span>REGION: </span>
-                            Lorem <br /><br />
-                            <span>INFOS: </span>
-                             ipsum dolor sit amet consectetur adipisicing elit. Eos, ab quaerat sapiente optio voluptates impedit cum reprehenderit! Quam est perspiciatis ex pariatur temporibus, omnis reprehenderit animi dolorum? Cumque,<br /><span> QUANTITE DISPONIBLE:</span>
-    
-                            </p></div>
-                            
-                        </div></Link>
-                        
-                    </div>  
-                    <div className="review_card">
-                    <div className="review_profile"> </div>
-
-                       
-                    <Link className="lien" to={'/priceDefinition'} >
-  <div className="review_text" >
-                            <h2 className="name">nomEtud</h2>
-                            <div className="review_icon">
-                                <AiTwotoneStar className="i"/>
-                                <AiTwotoneStar className="i"/>
-                                <AiTwotoneStar className="i"/>
-                                <BiStar className="i" />
-                                <AiOutlineStar className="i" />
-    
-                            </div>
-                            <div className="review_social">
-                                <BsFacebook className="i"/>
-                                <BsWhatsapp className="i"/>
-                                <BiPhoneCall className="i"/>
-    
-                            </div>
-                            <div><p>
-                                <span>REGION: </span>
-                            Lorem <br /><br />
-                            <span>INFOS: </span>
-                             ipsum dolor sit amet consectetur adipisicing elit. Eos, ab quaerat sapiente optio voluptates impedit cum reprehenderit! Quam est perspiciatis ex pariatur temporibus, omnis reprehenderit animi dolorum? Cumque,<br /><span> QUANTITE DISPONIBLE:</span>
-    
-                            </p></div>
-                            
-                        </div></Link>
-                        
-                    </div> 
-                    <div className="review_card">
-                    <div className="review_profile"> </div>
-
-                       
-                    <Link className="lien" to={'/priceDefinition'} >
-  <div className="review_text" >
-                            <h2 className="name">nomEtud</h2>
-                            <div className="review_icon">
-                                <AiTwotoneStar className="i"/>
-                                <AiTwotoneStar className="i"/>
-                                <AiTwotoneStar className="i"/>
-                                <BiStar className="i" />
-                                <AiOutlineStar className="i" />
-    
-                            </div>
-                            <div><p>
-                                <span>REGION: </span>
-                            Lorem <br /><br />
-                            <span>INFOS: </span>
-                             ipsum dolor sit amet consectetur adipisicing elit. Eos, ab quaerat sapiente optio voluptates impedit cum reprehenderit! Quam est perspiciatis ex pariatur temporibus, omnis reprehenderit animi dolorum? Cumque,<br /><span> QUANTITE DISPONIBLE:</span>
-    
-                            </p></div>
-                            
-                        </div></Link>
-                        
-                    </div> 
-                    <div className="review_card">
-                    <div className="review_profile"> </div>
-
-                       
-                    <Link className="lien" to={'/priceDefinition'} >
-  <div className="review_text" >
-                            <h2 className="name">nomEtud</h2>
-                            <div className="review_icon">
-                                <AiTwotoneStar className="i"/>
-                                <AiTwotoneStar className="i"/>
-                                <AiTwotoneStar className="i"/>
-                                <BiStar className="i" />
-                                <AiOutlineStar className="i" />
-    
-                            </div>
-                            <div className="review_social">
-                                <BsFacebook className="i"/>
-                                <BsWhatsapp className="i"/>
-                                <BiPhoneCall className="i"/>
-    
-                            </div>
-                            <div><p>
-                                <span>REGION: </span>
-                            Lorem <br /><br />
-                            <span>INFOS: </span>
-                             ipsum dolor sit amet consectetur adipisicing elit. Eos, ab quaerat sapiente optio voluptates impedit cum reprehenderit! Quam est perspiciatis ex pariatur temporibus, omnis reprehenderit animi dolorum? Cumque,<br /><span> QUANTITE DISPONIBLE:</span>
-    
-                            </p></div>
-                            
-                        </div></Link>
-                        
-                    </div> 
-                    <div className="review_card">
-                    <div className="review_profile"> </div>
-
-                       
-                    <Link className="lien" to={'/priceDefinition'} >
-  <div className="review_text" >
-                            <h2 className="name">nomEtud</h2>
-                            <div className="review_icon">
-                                <AiTwotoneStar className="i"/>
-                                <AiTwotoneStar className="i"/>
-                                <AiTwotoneStar className="i"/>
-                                <BiStar className="i" />
-                                <AiOutlineStar className="i" />
-    
-                            </div>
-                            <div className="review_social">
-                                <BsFacebook className="i"/>
-                                <BsWhatsapp className="i"/>
-                                <BiPhoneCall className="i"/>
-    
-                            </div>
-                            <div><p>
-                                <span>REGION: </span>
-                            Lorem <br /><br />
-                            <span>INFOS: </span>
-                             ipsum dolor sit amet consectetur adipisicing elit. Eos, ab quaerat sapiente optio voluptates impedit cum reprehenderit! Quam est perspiciatis ex pariatur temporibus, omnis reprehenderit animi dolorum? Cumque,<br /><span> QUANTITE DISPONIBLE:</span>
-    
-                            </p></div>
-                            
-                        </div></Link>
-                        
-                    </div>               
+    // Appel à l'API avec Axios
+    axios
+      .get(apiUrl)
+      .then((response) => {
+        setData(response.data);
+      })
+      .catch((error) => {
+        console.error("Erreur lors de la récupération des données :", error);
+      });
+  }, []);
   
-                </div>
 
+
+
+  const [datav, setDatav] = useState([]);
+
+  const getData = async () => {
+    try {
+      const apiUrl = "http://192.168.252.74:8082/commande/viewCom.php";
+      const response = await axios.get(apiUrl);
+      setDatav(response.data);
+    } catch (e) {
+      console.log(e);
+    }
+  };
+
+  useEffect(() => {
+    getData();
+  }, []);
+
+
+  const [isOpen, setIsOpen] = useState(false);
+
+  const togglePopup = () => {
+    setIsOpen(!isOpen);
+  };
+
+  return (
+    <div className="container">
+      <h1>DETAILS DE LA COMMANDE</h1>
+      <div className="bigdiv">
+        <div className="review" id="Review">
+          <div className="review_box">
+            <div className="review_card2">
+              <div className="review_profile"> </div>
+              <br />
+              <div className="review_text">
+                <center>
+                  <h2 className="name">Infos de l'acheteur</h2>
+                </center>
+                <br />
+                <br />
+                <div>
+                  <p>
+                    <span>Nom: </span>
+                    Lorem <br />
+                  </p>
+                  <br />
+                  <p>
+                    <span>Prénom: </span>
+                    Lorem <br />
+                  </p>
+                  <br />
+                  <p>
+                    <span>Nom: </span>
+                    Lorem <br />
+                  </p>
+                  <br />
+                  <p>
+                    <span>Nom: </span>
+                    Lorem <br />
+                  </p>
+                  <br />
                 </div>
-                
-                
+              </div>
             </div>
-            </div>
-    );
-};
+
+            {datav.map((tem, index)=>(
+                <div className="review_card">
+                <div className="review_profile"> </div>
+                <br />
+                <div className="review_text">
+                  <h2 className="name">Vendeur n° {index+1}</h2>
+                  <br />
+                  <br />
+                  <div>
+                    <p className="divtext">
+                      <span>Nom et prénom: </span>
+                      soro
+                    </p>
+                    <br />
+                    <p>
+                      <span>Région: </span>
+                      soro
+                    </p>
+                    <br />
+                    <p>
+                      <span>Quantité disponible </span>
+                      soro
+                    </p>
+                    <br />
+                    <p>
+                      <span>Quantité demandée: </span>
+                      soro
+                    </p>
+                    <br />
+                    <p>
+                      <span>Prix associé: </span>
+                      soro
+                    </p>
+                  </div>
+                  <br />
+                  <br />
+                  <div>
+                    <button className="boutton" onClick={togglePopup}>
+                      Contacter le vendeur
+                    </button>
+                  </div>
+                  
+                </div>
+              </div>
+            ))}
+          </div>
+          {isOpen && (
+                    <div className="popup">
+                      <div className="popup-content">
+                        <h2>Comment le contacter</h2><br />
+                        <div>
+                          <BsFillTelephoneFill className="i"/>
+                          O77828327813
+                        </div>
+                        <div><br />
+                          <BsWhatsapp className="i"/>
+                          O77828327813
+                        </div>
+                        <button onClick={togglePopup} className="boutton">
+                          Fermer
+                        </button>
+  
+                      
+                        <br />
+                      </div>
+                    </div>
+                  )}
+        </div>
+      </div>
+    </div>
+  );
+}
 
 export default VendeurbyCommande;
