@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import { FaSearch} from 'react-icons/fa';
- import {IoMdPerson} from 'react-icons/io'
 import {MdShoppingCart} from 'react-icons/md'
 import { useState } from "react";
 import './header.css'

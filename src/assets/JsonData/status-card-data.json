@@ -12,7 +12,7 @@
     {
         "icon": "bx bx-dots-horizontal-rounded",
         "count": "3",
-        "title": "Commandes en cours de validation"
+        "title": "attente de validation"
     },
     {
         "icon": "bx bx-check-square",

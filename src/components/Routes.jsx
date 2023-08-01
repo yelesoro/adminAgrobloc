@@ -11,6 +11,9 @@ import Login from '../pages/login/login'
 import Products from '../pages/Products'
 import Statut from '../pages/Statut/Statut';
 import VendeurbyCommande from '../pages/Vendeursparcommande/VendeurbyCommande';
+import CommandesValidés from '../pages/commandesValidées/CommandesValidés';
+import Comptes from '../Comptes/Comptes';
+
 
 
 const Routes = () => {
@@ -23,6 +26,10 @@ const Routes = () => {
             <Route path='/commandes/:id' component = {Products}/>
             <Route path='/statut' component ={Statut} ></Route>
             <Route path='/vendeurparcommande' component = {VendeurbyCommande}></Route>
+            <Route path='/comdencours' component = {CommandesValidés}></Route>
+            <Route path='/comptes' component = {Comptes}></Route>
+            
+            
             
             
 

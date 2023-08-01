@@ -20,10 +20,15 @@
         "route": "/geographycard",
         "icon": "bx bx-bar-chart-alt"
     },
- 
+
+  {
+        "display_name": "en attente de validation",
+        "route": "/comdencours",
+        "icon": "bx bx-"
+    },
     {
         "display_name": "Comptes",
-        "route": "/logi",
+        "route": "/comptes",
         "icon": "bx bx-credit-card-alt"
     }
 
