@@ -55,3 +55,37 @@
 .btn-view {
     background-color: green;
 }
+.btn2{
+    color: black;
+    border: none;
+    padding: 5px 8px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 5px;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.15);
+    margin-left: 80%;
+    height: 50px;
+
+
+}
+
+.btn2:hover{
+    background-color: green;
+    color: white;
+}
+
+.vendeur-sum{
+    display: flex;
+    flex-direction: row;
+    padding: 1rem;
+}
+.vendeur-sum:hover{
+    background-color: rgb(150, 240, 150);
+    border-radius: 20px;
+    padding: 1rem;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.15);
+}

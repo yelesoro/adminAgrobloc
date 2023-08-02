@@ -24,10 +24,10 @@
   {
         "display_name": "en attente de validation",
         "route": "/comdencours",
-        "icon": "bx bx-"
+        "icon": "bx bx-dots-horizontal-rounded"
     },
     {
-        "display_name": "Comptes",
+        "display_name": "Paiement des Vendeurs",
         "route": "/comptes",
         "icon": "bx bx-credit-card-alt"
     }

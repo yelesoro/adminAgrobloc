@@ -81,7 +81,8 @@ const Comptes = () => {
 
     return (
         <div className="page">
-            <h1>Liste des transactions en attente</h1>
+            <h1>Liste des commandes livrées</h1>
+            <p>Le paiement des vendeurs s'effectue ici</p><br /><br />
             <table className="transactions-table">
                 <thead>
                     <tr>
@@ -115,12 +116,13 @@ const Comptes = () => {
                         </tr>
                     ))}
                 </tbody>
-            </table>
+            </table><br /><br />
             {selectedAcheteur && (
                 <div className="vendeurs-and-sums">
                     <h2>Liste des vendeurs pour {selectedAcheteur}</h2>
                     {vendeursList.map((vendeur) => (
                         <div key={vendeur} className="vendeur-sum">
+                            <div>
                             <h3>{vendeur}</h3>
                             <p>Prix : {sumByVendeur[vendeur]} Fcfa</p>
                             <ul>
@@ -129,7 +131,9 @@ const Comptes = () => {
                                         {transaction.nomAcheteur} - {transaction.quantite} Kg - {transaction.prix} Fcfa
                                     </li>
                                 ))}
-                            </ul>
+                            </ul><br /><br />
+                            </div>
+                            <button className="btn2"><Link to={'/paiement'}>Procéder au paiement</Link></button>
                             {/* <button className="btn btn-delete" onClick={() => onDelete(transactions.id)}>Transferer</button> */}
                         </div>
                     ))}

@@ -13,6 +13,7 @@ import Statut from '../pages/Statut/Statut';
 import VendeurbyCommande from '../pages/Vendeursparcommande/VendeurbyCommande';
 import CommandesValidés from '../pages/commandesValidées/CommandesValidés';
 import Comptes from '../Comptes/Comptes';
+import Paiement from '../pages/paiement/Paiement';
 
 
 
@@ -28,6 +29,7 @@ const Routes = () => {
             <Route path='/vendeurparcommande' component = {VendeurbyCommande}></Route>
             <Route path='/comdencours' component = {CommandesValidés}></Route>
             <Route path='/comptes' component = {Comptes}></Route>
+            <Route path='/paiement' component = {Paiement}/>
             
             
             
