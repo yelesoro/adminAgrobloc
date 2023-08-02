@@ -83,7 +83,8 @@ const Comptes = () => {
         <div className="page">
             <h1>Liste des commandes livrées</h1>
             <p>Le paiement des vendeurs s'effectue ici</p><br /><br />
-            <table className="transactions-table">
+            <div className="tablediv">
+                <table className="transactions-table">
                 <thead>
                     <tr>
                         <th>Nom Acheteur</th>
@@ -95,7 +96,7 @@ const Comptes = () => {
                 </thead>
                 <tbody>
                     {transactions.map((transaction) => (
-                        <tr key={transaction.id}>
+                        <tr key={transaction.id} className="trc" >
                             <td
                                 className="acheteur-cell"
                                 onClick={() => handleAcheteurClick(transaction.nomAcheteur)}
@@ -107,7 +108,7 @@ const Comptes = () => {
                             <td>{transaction.date}</td>
                             <td>
                                 <button
-                                    className="btn btn-delete"
+                                    className="btnn "
                                     onClick={() => handleAcheteurClick(transaction.nomAcheteur)}
                                 >
                                     Voir Plus
@@ -116,7 +117,8 @@ const Comptes = () => {
                         </tr>
                     ))}
                 </tbody>
-            </table><br /><br />
+            </table>
+                </div><br /><br />
             {selectedAcheteur && (
                 <div className="vendeurs-and-sums">
                     <h2>Liste des vendeurs pour {selectedAcheteur}</h2>
