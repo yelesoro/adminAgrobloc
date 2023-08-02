@@ -15,11 +15,7 @@
         "route": "/statut",
         "icon": "bx bx-cart"
     },
-    {
-        "display_name": "Analyses",
-        "route": "/geographycard",
-        "icon": "bx bx-bar-chart-alt"
-    },
+    
 
   {
         "display_name": "en attente de validation",
@@ -30,6 +26,12 @@
         "display_name": "Paiement des Vendeurs",
         "route": "/comptes",
         "icon": "bx bx-credit-card-alt"
+    },
+
+    {
+        "display_name": "Analyses",
+        "route": "/geographycard",
+        "icon": "bx bx-bar-chart-alt"
     }
 
 ]
