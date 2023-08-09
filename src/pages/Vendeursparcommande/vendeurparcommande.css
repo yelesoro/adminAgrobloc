@@ -227,3 +227,9 @@ img{
     opacity: 1;
     transition: 0.3s;
 }
+
+.divb{
+    align-items: center;
+    margin-top: -25px;
+    margin-right: 160px;
+}

@@ -1,13 +1,59 @@
 .btn1{
     background-color: rgb(215, 220, 213);
-    padding: 1rem;
+    padding-top: .7em;
     border-radius: 20px;
     box-shadow: 2px 5px 5px rgb(149, 144, 144);
     height: 55px;
     width: 110px;
     border: none;
+    justify-content: center;
 }
 
 .btn1:hover{
     color: var(--main-color-green);
 }
+
+.statutCO{
+    border-radius: 10px;
+    box-shadow: 5px 5px 2px rgb(237, 237, 213);
+    background-color: rgb(23, 238, 15);
+    padding: 7px;
+    width: 120px;
+    font-weight: 600;
+    color: white;
+  }
+  .statutCA{
+    border-radius: 10px;
+    box-shadow: 5px 5px 2px rgb(237, 237, 213);
+    background-color: rgb(235, 8, 8);
+    padding: 7px;
+    width: 120px;
+    font-weight: 600;
+    color: white;
+  
+  }
+  .statutPE{
+    border-radius: 10px;
+    box-shadow: 5px 5px 2px rgb(237, 237, 213);
+    background-color: rgb(220, 154, 30);
+    padding: 7px;
+    width: 120px;
+    font-weight: 600;
+    color: white;
+  
+  }
+
+  .statut{
+    border-radius: 10px;
+    box-shadow: 5px 5px 2px rgb(237, 237, 213);
+    background-color: rgb(104, 102, 101);
+    padding: 7px;
+    width: 120px;
+    font-weight: 600;
+    color: white;
+  }
+
+  .cardbody{
+    overflow-y: auto;
+    max-height: 920px;
+  }

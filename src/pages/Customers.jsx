@@ -45,7 +45,7 @@ const Customers = () => {
                             <td>{item.Num_pieceP}</td>
                             <td>{item.Nom_planteur}</td>
                             <td>{item.Pren_planteur}</td>
-                            <td><Link to = {"/"}><button className="btn">Voir plus</button></Link></td>
+                            <td><Link to = {"/"}><button className="btn1">Voir plus</button></Link></td>
                           </tr>
                         ))}
                       </tbody>

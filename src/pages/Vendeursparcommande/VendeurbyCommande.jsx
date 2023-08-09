@@ -16,7 +16,7 @@ function VendeurbyCommande() {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    const apiUrl = "http://localhost:3000/api/get";
+    const apiUrl = "http://192.168.252.192:7001/contracts/all";
 
     // Appel à l'API avec Axios
     axios
@@ -58,7 +58,7 @@ function VendeurbyCommande() {
   return (
     <div className="container">
       <h1>DETAILS DE LA COMMANDE</h1>
-      <div className="bigdiv">
+      <div >
         <div className="review" id="Review">
           <div className="review_box">
             <div className="review_card2">
@@ -95,7 +95,7 @@ function VendeurbyCommande() {
               </div>
             </div>
 
-            {datav.map((tem, index)=>(
+            {datav.map((item, index)=>(
                 <div className="review_card">
                 <div className="review_profile"> </div>
                 <br />
@@ -131,7 +131,7 @@ function VendeurbyCommande() {
                   </div>
                   <br />
                   <br />
-                  <div>
+                  <div className="divb">
                     <button className="boutton" onClick={togglePopup}>
                       Contacter le vendeur
                     </button>

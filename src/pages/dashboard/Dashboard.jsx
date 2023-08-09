@@ -20,26 +20,48 @@ import "./Dashboar.css"
 
 import "../../components/tableDash/table.css"
 
-const StatutCommande = ({statut})=>{
-    let statusText;
+const StatutCommande = ({ statut }) => {
+  let statusText;
 
-  if (statut == 1) {
-    statusText = 'Terminé';
+  if (statut == "COMPLETED") {
+    statusText = "Terminé";
     return (
-        <div  className='statutT'>
-          <center><p >{statusText}</p></center>
-        </div>
-      );
-  } else {
-    statusText = 'En cours';
+      <div className="statutCO">
+        <center>
+          <p>{statusText}</p>
+        </center>
+      </div>
+    );
+  } else if(statut == "CANCELLED"){
+    statusText = "Refusée";
     return (
-        <div  className='statutF'>
-          <center><p> {statusText}</p></center>
-        </div>
-      );
+      <div className="statutCA">
+        <center>
+          <p>{statusText}</p>
+        </center>
+      </div>
+    );
   }
-    
-}
+  else if(statut == "PENDING"){
+    statusText = "En attente ";
+    return (
+      <div className="statutPE">
+        <center>
+          <p> {statusText}</p>
+        </center>
+      </div>
+    );
+  }else{
+    statusText = "Non déterminé";
+    return (
+      <div className="statut">
+        <center>
+          <p>{statusText}</p>
+        </center>
+      </div>
+    );
+  }
+};
 
 const chartOptions = {
     series: [{
@@ -71,11 +93,11 @@ const chartOptions = {
 
 const Dashboard = () => {
 
-    const [data, setData] = useState([]);
+  const [data, setData] = useState([]);
 
-  const getDataCommandes = async () => {
+  const getData = async () => {
     try {
-      const apiUrl = "http://192.168.252.74:8082/commande/viewCom.php";
+      const apiUrl = "http://192.168.252.192:7001/contracts/all";
       const response = await axios.get(apiUrl);
       setData(response.data);
     } catch (e) {
@@ -84,7 +106,7 @@ const Dashboard = () => {
   };
 
   useEffect(() => {
-    getDataCommandes();
+    getData();
   }, []);
 
     const themeReducer = useSelector(state => state.ThemeReducer.mode)
@@ -169,33 +191,39 @@ const Dashboard = () => {
                         <div className="card__header">
                             <h3>Etat des commandes récentes</h3>
                         </div>
-                        <div className="card__body">
+                        <div className="card_body">
                         <table>
-                      <thead>
-                        <tr>
-                          <th>Nom du produit</th>
-                          <th>Quantité commandée</th>
-                          <th>Prix de la commande</th>
-                          <th>Statut de la commande</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        {data.map((item) => (
-                          <tr key={item.Id}>
-                          <td>{item.Nom_com}</td>
-                          <td>{item.Quan_com} kg</td>
-                          <td>{item.Pri_com} frcs cfa</td>
-                          <td><StatutCommande statut={item.Statut}/></td>
-                        
-                            
+                  <thead>
+                    <tr>
+                      <th>Code du contrat</th>
+                      <th>Nom du produit</th>
+                      <th>Poids demandé</th>
+                      <th>Prix </th>
+                      <th>Statut de la commande</th>
+                      <th></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {data.map((item) => (
+                      <tr key={item.Id}>
+                        <td>{item.contractCode}</td>
+                        <td>{item.productName}</td>
+                        <td>{item.weight} kg</td>
+                        <td>{item.amount} frcs cfa</td>
+                        <Link to={"/vendeurparcommande"}>
+                          <td>
+                            <StatutCommande statut={item.status} />
+                          </td>
+                        </Link>
+                        <td ><Link to = {"/vendeurparcommande"} ><div className="btn1"><center>Voir plus</center></div ></Link></td>
 
-                        </tr>
-                        ))}
-                      </tbody>
-                    </table>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
                         </div>
                         <div className="card__footer">
-                            <Link to='/'>voir plus</Link>
+                            <Link to='/statut'>voir plus</Link>
                         </div>
                     </div>
                 </div>
