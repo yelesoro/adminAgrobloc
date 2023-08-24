@@ -171,9 +171,9 @@ const Dashboard = () => {
                       <tbody>
                         {data.map((item) => (
                           <tr key={item.Id}>
-                            <td>{item.Nom_com}</td>
-                            <td>{item.Quan_com} kg</td>
-                            <td>{item.Pri_com} frcs cfa</td>
+                            <td>{item.productName}</td>
+                            <td>{item.weight} kg</td>
+                            <td>{item.amount} frcs cfa</td>
                           </tr>
                         ))}
                       </tbody>

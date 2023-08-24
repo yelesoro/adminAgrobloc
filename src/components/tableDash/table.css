@@ -36,7 +36,7 @@ tbody > tr:hover {
     margin-left: 10px;
 }
 
-.btn1{
+.btn4{
     border: none;
     font-size: 20px;
     border-radius: 20px;
@@ -44,11 +44,31 @@ tbody > tr:hover {
     box-shadow: 3px 2px 5px rgba(0, 0, 0, 0.3);
     height: 35px;
     width: 90px;
+    margin: 2rem;
 }
 
-.btn1:hover{
+.btn4:hover{
     color: var(--main-color);
     align-items: center;
     justify-content: center;
+    background-color: aliceblue;
 }
 
+
+.btn3{
+    border: none;
+    font-size: 20px;
+    border-radius: 20px;
+    padding: 5px;
+    box-shadow: 3px 2px 5px rgba(0, 0, 0, 0.3);
+    height: 35px;
+    width: 90px;
+    margin: 2rem;
+}
+
+.btn3:hover{
+    color: var(--main-color);
+    align-items: center;
+    justify-content: center;
+    background-color: aliceblue;
+}

@@ -98,3 +98,41 @@
     padding: -10px;
 }
 
+.proceder-btn {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .proceder-btn:hover {
+    background-color: #218838;
+  }
+
+/* Style de la boîte de dialogue */
+.dialog-box {
+    background-color: white;
+    border-radius: 5px;
+    padding: 20px;
+    max-width: 400px;
+    margin: 0 auto; /* Pour centrer horizontalement */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+  }
+  
+  /* Style pour le bouton dans la boîte de dialogue */
+  .dialog-button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .dialog-button:hover {
+    background-color: #0056b3;
+  }
+  

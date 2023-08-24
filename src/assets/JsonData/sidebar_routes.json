@@ -12,16 +12,10 @@
  
     {
         "display_name": "Statut des commandes",
-        "route": "/statut",
+        "route": "/comdencours",
         "icon": "bx bx-cart"
     },
     
-
-  {
-        "display_name": "en attente de validation",
-        "route": "/comdencours",
-        "icon": "bx bx-dots-horizontal-rounded"
-    },
     {
         "display_name": "Paiement des Vendeurs",
         "route": "/comptes",

@@ -13,6 +13,22 @@
     color: var(--main-color-green);
 }
 
+
+.btn11{
+  background-color: rgb(215, 220, 213);
+  padding-top: .7em;
+  border-radius: 20px;
+  box-shadow: 2px 5px 5px rgb(149, 144, 144);
+  height: 55px;
+  width: 110px;
+  border: none;
+  justify-content: center;
+  font-weight: 600;
+}
+
+.btn11:hover{
+  color: var(--main-color-green);
+}
 .statutCO{
     border-radius: 10px;
     box-shadow: 5px 5px 2px rgb(237, 237, 213);
@@ -57,3 +73,68 @@
     overflow-y: auto;
     max-height: 920px;
   }
+
+
+
+.header1{
+  position:relative;
+  top: 0; left: 0; right: 0;
+  background:#fff ;
+  padding: 1rem 7%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 1000;
+  box-shadow: var(--box-shadow);
+  width: 35%;
+  border-radius: 10px;
+  border: 1px solid var(--primaryColor);
+  margin-bottom: 20px;
+}
+
+.header1 .navbar1 .linkp {
+  font-size: 1.7rem;
+  border-radius: .5rem;
+  padding: .5rem 1.5rem;
+  color: var(--light-color);
+  margin-left: -80px;
+  color: white;
+  background-color: green;
+
+}
+
+.linkp1{  font-size: 1.7rem;
+  border-radius: .5rem;
+  padding: .5rem 1.5rem;
+  color: var(--light-color);
+  margin-left: -80px;
+ }
+
+ .link2{  font-size: 1.7rem;
+  border-radius: .5rem;
+  padding: .5rem 1.5rem;
+  color: var(--light-color);
+  margin-left: 30px;
+  background-color: green;
+  color: white;
+ }
+
+ .link2:hover{
+  color: white;
+ }
+
+.header1 .navbar1 .link{
+  margin-left: 30px;
+}
+.header1 .navbar1 .link22{
+  margin-left: 30px;
+  background-color: var(--primaryColor);
+}
+
+
+header .navbar1 .link1,.linkp:hover,.link:hover, .linkp1:hover{
+  color: #fff;
+  background-color: green;
+  border-radius: 20px;
+
+}

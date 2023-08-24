@@ -50,13 +50,13 @@ const StatutCommande = ({ statut }) => {
   }
 };
 
-function Statut() {
+function Livrees() {
   const [data, setData] = useState([]);
   console.log(data[0])
 
   const getData = async () => {
     try {
-      const apiUrl = "http://192.168.252.192:7001/contracts/all?status=VALIDED";
+      const apiUrl = "http://192.168.252.192:7001/contracts/all?status=COMPLETED";
       const response = await axios.get(apiUrl);
       setData(response.data);
     } catch (e) {
@@ -77,8 +77,8 @@ function Statut() {
             <div className="header1">
                 <nav className="navbar1">
                     <Link to={'/comdencours'} className="linkp1">EnCoursDeValidation</Link>
-                    <Link className="link2" to={'/statut'}>Validées</Link>
-                    <Link className="link" to={'/livre'}>Livrées</Link>
+                    <Link className="link" to={'/statut'}>Validées</Link>
+                    <Link className="link2" to={'/historique'}>Livrées</Link>
                 </nav>
             </div>
             </center>
@@ -111,7 +111,7 @@ function Statut() {
                             <StatutCommande statut={item.status} />
                           </td>
                         </Link>
-                        <td ><Link to = {"/vendeurparcommande"} ><div className="btn1"><center>Voir plus</center></div ></Link></td>
+                        <td ><Link to = {"/Comptes"} ><div className="btn11"><center>Payer les vendeurs</center></div ></Link></td>
 
                       </tr>
                     ))}
@@ -126,4 +126,4 @@ function Statut() {
   );
 }
 
-export default Statut;
+export default Livrees;
