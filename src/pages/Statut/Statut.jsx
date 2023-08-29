@@ -68,6 +68,10 @@ function Statut() {
     getData();
   }, []);
 
+
+  const sortedData = data.sort((a, b) => b.contractId - a.contractId);
+  console.log(sortedData)
+
   return (
     <div>
       <h1> Statut des commandes </h1>
@@ -100,8 +104,8 @@ function Statut() {
                     </tr>
                   </thead>
                   <tbody>
-                    {data.map((item) => (
-                      <tr key={item.Id}>
+                    {sortedData.map((item) => (
+                      <tr key={item.contractId}>
                         <td>{item.contractCode}</td>
                         <td>{item.productName}</td>
                         <td>{item.weight} kg</td>

@@ -12,7 +12,7 @@ const CommandesValides = () => {
 
   const getData = async () => {
     try {
-      const apiUrl = "http://192.168.252.192:7001/contracts/all";
+      const apiUrl = "http://192.168.252.192:7001/contracts/all?status=PENDING";
       const response = await axios.get(apiUrl);
       setData(response.data);
     } catch (e) {
@@ -42,6 +42,10 @@ const CommandesValides = () => {
   const togglePopup = () => {
     setIsOpen(!isOpen);
   };
+
+  const sortedData = data.sort((a, b) => b.contractId - a.contractId);
+  console.log(sortedData)
+
 
 
   return (
@@ -74,7 +78,7 @@ const CommandesValides = () => {
                     </tr>
                   </thead>
                   <tbody>
-                    {data.map((item) => (
+                    {sortedData.map((item) => (
                       <tr key={item.contractId}>
                         <td>{item.contractCode}</td>
                         <td>{item.productName}</td>

@@ -111,6 +111,10 @@ const Dashboard = () => {
 
     const themeReducer = useSelector(state => state.ThemeReducer.mode)
 
+
+  const sortedData = data.sort((a, b) => b.contractId - a.contractId);
+  console.log(sortedData)
+
     return (
         <div>
             <h2 className="page-header">Tableau de bord</h2>
@@ -182,7 +186,7 @@ const Dashboard = () => {
                            </div>
                         </div>
                         <div className="card__footer">
-                            <Link to='/'>Voir plus</Link>
+                            <Link to='/comdencours'>Voir plus</Link>
                         </div>
                     </div>
                 </div>
@@ -204,8 +208,8 @@ const Dashboard = () => {
                     </tr>
                   </thead>
                   <tbody>
-                    {data.map((item) => (
-                      <tr key={item.Id}>
+                    {sortedData.map((item) => (
+                      <tr key={item.contractId}>
                         <td>{item.contractCode}</td>
                         <td>{item.productName}</td>
                         <td>{item.weight} kg</td>
@@ -215,7 +219,7 @@ const Dashboard = () => {
                             <StatutCommande statut={item.status} />
                           </td>
                         </Link>
-                        <td ><Link to = {"/vendeurparcommande"} ><div className="btn1"><center>Voir plus</center></div ></Link></td>
+                        <td ><Link to = {"/comdencours"} ><div className="btn1"><center>Voir plus</center></div ></Link></td>
 
                       </tr>
                     ))}
@@ -223,7 +227,7 @@ const Dashboard = () => {
                 </table>
                         </div>
                         <div className="card__footer">
-                            <Link to='/statut'>voir plus</Link>
+                            <Link to='/comdencours'>voir plus</Link>
                         </div>
                     </div>
                 </div>
